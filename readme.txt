@@ -3,6 +3,13 @@
 -----------------------
 Browny is a one page bootstrap 3 based resume/portfolio template.
 
+Site download files (keep in assets/download/ only; do not rely on paths outside this repo):
+- 경력증명서_CJ올리브네트웍스.pdf
+- 성적증명서_UNIST.pdf
+- 임원추천서.pdf
+- 추천서_임경묵.pdf
+- 추천서_한정수.pdf
+
 
 Template Info:
 -----------------------
