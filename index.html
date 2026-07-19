@@ -310,10 +310,30 @@
             flex-wrap: wrap;
             gap: 10px;
         }
+        .project-title-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
         .project-title {
             font-size: 16px;
             font-weight: 600;
             color: #111;
+        }
+        .project-status {
+            display: inline-block;
+            padding: 3px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 20px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            background: #e8f4f8;
+            color: #1a1a2e;
+            border: 1px solid #b8d4e3;
+            line-height: 1.4;
+            white-space: nowrap;
         }
         .project-date {
             font-size: 13px;
@@ -322,13 +342,14 @@
         .project-desc {
             font-size: 14px;
             color: #555;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.6;
         }
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
+            margin-top: 2px;
         }
         .project-tag {
             padding: 4px 10px;
@@ -446,11 +467,6 @@
             background: #d4edda;
             color: #155724;
             border: 1px solid #28a745;
-        }
-        .pub-badge.in-progress {
-            background: #e8f4f8;
-            color: #1a1a2e;
-            border: 1px solid #b8d4e3;
         }
         
         /* Gallery */
@@ -813,14 +829,16 @@
                     
                     <div class="project-item">
                         <div class="project-header">
-                            <span class="project-title">VLA Catastrophic Forgetting — AICP, UNIST</span>
+                            <div class="project-title-row">
+                                <span class="project-title">VLA Catastrophic Forgetting — AICP, UNIST</span>
+                                <span class="project-status">In Progress</span>
+                            </div>
                             <span class="project-date">2026 - Present</span>
                         </div>
                         <p class="project-desc">
                             Undergraduate research through the AI Challenger Program (AICP) at UNIST, investigating catastrophic forgetting in Vision-Language-Action (VLA) models.
                             Leading simulation setup and experimentation with LIBERO and LeIsaac benchmark environments.
                         </p>
-                        <span class="pub-badge in-progress">In Progress</span>
                         <div class="project-tags">
                             <span class="project-tag">VLA</span>
                             <span class="project-tag">Catastrophic Forgetting</span>
