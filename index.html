@@ -437,6 +437,14 @@
             margin-bottom: 6px;
             line-height: 1.5;
         }
+        .pub-title a {
+            color: #111;
+            text-decoration: none;
+        }
+        .pub-title a:hover {
+            color: #1a1a2e;
+            text-decoration: underline;
+        }
         .pub-authors {
             font-size: 13px;
             color: #666;
@@ -463,10 +471,24 @@
             color: #856404;
             border: 1px solid #ffc107;
         }
-        .pub-badge.accepted {
+        .pub-badge.accepted,
+        .pub-badge.published {
             background: #d4edda;
             color: #155724;
             border: 1px solid #28a745;
+        }
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1a2e;
+            text-decoration: none;
+        }
+        .pub-link:hover {
+            text-decoration: underline;
         }
         
         /* Gallery */
@@ -895,10 +917,17 @@
                     <h2 class="section-title">Publications</h2>
                     
                     <div class="pub-item">
-                        <div class="pub-title">Deploying Agentic LLM Pipelines at Scale: Quality-Gated Ensemble Governance for Enterprise News Intelligence</div>
+                        <div class="pub-title">
+                            <a href="https://aisel.aisnet.org/amcis2026/ai_systdesign/ai_systdesign/3/" target="_blank" rel="noopener noreferrer">
+                                Deploying Agentic LLM Pipelines at Scale: Quality-Gated Ensemble Governance for Enterprise News Intelligence
+                            </a>
+                        </div>
                         <div class="pub-authors"><strong>Muryeol Choi</strong> (2nd Author) et al.</div>
-                        <div class="pub-venue">Americas Conference on Information Systems (AMCIS), 2026</div>
-                        <span class="pub-badge accepted">Accepted</span>
+                        <div class="pub-venue">Americas Conference on Information Systems (AMCIS), 2026 · AISeL</div>
+                        <span class="pub-badge published">Published</span>
+                        <a href="https://aisel.aisnet.org/amcis2026/ai_systdesign/ai_systdesign/3/" target="_blank" rel="noopener noreferrer" class="pub-link">
+                            <i class="fa fa-external-link"></i> View Paper on AISeL
+                        </a>
                     </div>
                     
                 </section>
@@ -906,6 +935,21 @@
                 <!-- Recommendation -->
                 <section id="recommendation" class="section">
                     <h2 class="section-title">Recommendation Letters</h2>
+                    
+                    <div class="recommendation-card">
+                        <div class="recommendation-author">
+                            <div class="rec-icon">
+                                <i class="fa fa-file-pdf-o"></i>
+                            </div>
+                            <div class="recommendation-author-info">
+                                <h4>추천서 통합본</h4>
+                                <p>손종수 (VP) · 한정수 · 임경묵 · 7 pages · 3.3 MB</p>
+                            </div>
+                            <a href="assets/download/추천서_통합.pdf" download class="download-link">
+                                <i class="fa fa-download"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
                     
                     <div class="recommendation-card">
                         <div class="recommendation-author">
