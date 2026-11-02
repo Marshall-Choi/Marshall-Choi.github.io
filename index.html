@@ -359,6 +359,45 @@
             border-radius: 4px;
             font-weight: 500;
         }
+        .project-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .project-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 14px;
+        }
+        .project-stat {
+            padding: 6px 12px;
+            background: #f0f0f4;
+            color: #1a1a2e;
+            font-size: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .project-subhead {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin: 12px 0 6px;
+        }
+        .project-subhead:first-of-type {
+            margin-top: 0;
+        }
+        .project-detail-list {
+            margin: 0 0 4px 0;
+            padding-left: 18px;
+        }
+        .project-detail-list li {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.55;
+            margin-bottom: 4px;
+        }
         
         /* Recommendation */
         .recommendation-card {
@@ -737,7 +776,7 @@
                             </div>
                             <div class="recommendation-author-info">
                                 <h4>경력증명서</h4>
-                                <p>CJ올리브네트웍스 (CJ AI Center) · 2025년 3월 발급</p>
+                                <p>CJ올리브네트웍스 (CJ AI Center) · 2026년 3월 발급</p>
                             </div>
                             <a href="assets/download/경력증명서_CJ올리브네트웍스.pdf" download class="download-link">
                                 <i class="fa fa-download"></i> Download PDF
@@ -848,6 +887,56 @@
                 <!-- Projects -->
                 <section id="projects" class="section">
                     <h2 class="section-title">Projects</h2>
+                    
+                    <div class="project-item">
+                        <div class="project-header">
+                            <span class="project-title">FPGA-based W1A1 Binary Neural Network (BNN) Accelerator on PYNQ-Z2</span>
+                            <span class="project-date">Mar 2026 – Jun 2026</span>
+                        </div>
+                        <p class="project-desc">
+                            University team project (team of 3): a binarized (1-bit weight, 1-bit activation) MNIST digit classifier with inference running entirely in the FPGA programmable logic (PL).
+                            Designed to fit PYNQ-Z2 resource limits while exceeding the accuracy target.
+                        </p>
+                        <p class="project-meta">My role: BNN quantization and data preprocessing.</p>
+                        <div class="project-stats">
+                            <span class="project-stat">96.53% accuracy</span>
+                            <span class="project-stat">29.9K LUTs (56.2%)</span>
+                            <span class="project-stat">0 DSP</span>
+                            <span class="project-stat">~34× faster than CPU</span>
+                        </div>
+                        <p class="project-subhead">Goal</p>
+                        <ul class="project-detail-list">
+                            <li>Reach at least 93% accuracy on MNIST</li>
+                            <li>Run neural network inference in the PL under FPGA resource constraints</li>
+                        </ul>
+                        <p class="project-subhead">My contributions</p>
+                        <ul class="project-detail-list">
+                            <li>W1A1 quantization; XNOR + popcount replaces multiply-accumulate</li>
+                            <li>Threshold folding: bias, scale, and quantization terms merged offline into per-channel thresholds, so inference compares popcount results against thresholds</li>
+                            <li>Input preprocessing: bit-packed the input image with a fused C packer (3,136 bytes → 100 bytes per image)</li>
+                        </ul>
+                        <p class="project-subhead">Team contributions</p>
+                        <ul class="project-detail-list">
+                            <li>Loop unrolling and multi-pass execution: 8 output channels per pass over 4 passes (32-way parallelism exceeded ~140K LUT device limit)</li>
+                            <li><code>DEPENDENCE</code> pragma on output buffers without true loop-carried dependency, keeping initiation interval (II) at 1 cycle in Conv2 and Conv3</li>
+                            <li>Layer-to-layer streaming in the PL datapath (Vitis HLS; team implementation)</li>
+                        </ul>
+                        <p class="project-subhead">Results (team)</p>
+                        <ul class="project-detail-list">
+                            <li>96.53% accuracy on 70,000 MNIST images (target: 93%)</li>
+                            <li>29,894 LUTs (~56.2% of device); 0 DSP</li>
+                            <li>End-to-end time 0.874 s vs ~30 s CPU baseline (~34×); hardware kernel 0.345 s</li>
+                            <li>Input payload per image: 3,136 B → 100 B</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="project-tag">FPGA</span>
+                            <span class="project-tag">Quantization</span>
+                            <span class="project-tag">BNN</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">Data Preprocessing</span>
+                            <span class="project-tag">Hardware Acceleration</span>
+                        </div>
+                    </div>
                     
                     <div class="project-item">
                         <div class="project-header">
